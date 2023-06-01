@@ -1,8 +1,7 @@
 package by.kozlov.userservtestintegr.mapper;
 
-import by.kozlov.spring.database.CompanyRepository;
-import by.kozlov.spring.dto.UserCreateDto;
-import by.kozlov.spring.entity.User;
+import by.kozlov.userservtestintegr.dto.UserCreateDto;
+import by.kozlov.userservtestintegr.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -10,16 +9,16 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserCreateMapper implements Mapper <UserCreateDto, User>{
 
-    private final CompanyRepository companyRepository;
+    private final CompanyCreateMapper companyCreateMapper;
 
     @Override
     public User mapFrom(UserCreateDto object) {
         return User.builder()
+                .id(object.getId())
                 .name(object.getName())
                 .surname(object.getSurname())
                 .email(object.getEmail())
-                .company(companyRepository.findById(object.getCompany().getId())
-                        .orElseThrow(IllegalArgumentException::new))
+                .company(companyCreateMapper.mapFrom(object.getCompany()))
                 .build();
     }
 }

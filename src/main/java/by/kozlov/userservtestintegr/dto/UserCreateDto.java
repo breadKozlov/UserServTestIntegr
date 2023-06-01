@@ -1,6 +1,6 @@
 package by.kozlov.userservtestintegr.dto;
 
-import by.kozlov.spring.entity.Company;
+import by.kozlov.userservtestintegr.entity.Company;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @ToString
 public class UserCreateDto {
-    private  String name;
-    private  String surname;
-    private  String email;
-    private Company company;
+    private Integer id;
+    private String name;
+    private String surname;
+    private String email;
+    private CompanyCreateDto company;
 }

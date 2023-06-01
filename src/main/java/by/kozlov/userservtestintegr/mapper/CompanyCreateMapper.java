@@ -1,10 +1,11 @@
 package by.kozlov.userservtestintegr.mapper;
 
-import by.kozlov.spring.dto.CompanyCreateDto;
-import by.kozlov.spring.dto.UserCreateDto;
-import by.kozlov.spring.entity.Company;
-import by.kozlov.spring.entity.User;
 
+import by.kozlov.userservtestintegr.dto.CompanyCreateDto;
+import by.kozlov.userservtestintegr.entity.Company;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CompanyCreateMapper implements Mapper <CompanyCreateDto, Company>{
     @Override
     public Company mapFrom(CompanyCreateDto object) {

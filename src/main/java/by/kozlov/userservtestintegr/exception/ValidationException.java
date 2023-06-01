@@ -1,5 +1,6 @@
 package by.kozlov.userservtestintegr.exception;
 
+import by.kozlov.userservtestintegr.validator.Error;
 import lombok.Getter;
 
 import java.util.List;
